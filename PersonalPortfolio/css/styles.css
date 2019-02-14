@@ -5,7 +5,7 @@ Last Edited: February 9, 2019
 body {
   background-image: url("../images/background_image.jpg");
   background-color: #cccccc;
-  height-min: 100%;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

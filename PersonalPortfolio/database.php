@@ -2,7 +2,7 @@
 class Database {
     private static $dsn = 'mysql:host=localhost;dbname=perportaaron';
     private static $username = 'root';
-    private static $password = 'Pa$$w0rd';
+    private static $password = 'Pa$$w0rdxxx';
     private static $db;
 
     private function __construct() {}

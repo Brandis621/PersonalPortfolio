@@ -69,47 +69,49 @@ try {
 	
 	<main>
             <div id="container">
-                <aside>
-                    <!-- display a list of categories -->
-                    <h2>Employees</h2>
-                    <ul>
-                        <?php foreach ($employees as $employee) : ?>
-                        <li>
-                            <a href="?employee_id=<?php echo $employee['EmployeeID']; ?>">
-                                <?php echo $employee['EmployeeName']; ?>
-                            </a>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>          
-                </aside>
-                <section>
-                    <!-- display a table of replies from employees -->
-                    <h2><?php echo $employee_name; ?></h2>
-                    <table align="center" class="adminTable">
-                        <tr>
-                            <th>Employee ID</th>
-                            <th>Reply ID</th>
-                            <th>Email</th>
-                            <th>Reply</th>
-                            <th>Delete</th>
-                        </tr>
+                <div id="flex-container">
+                    <aside>
+                        <!-- display a list of categories -->
+                        <h2>Employees</h2>
+                        <ul>
+                            <?php foreach ($employees as $employee) : ?>
+                            <li>
+                                <a href="?employee_id=<?php echo $employee['EmployeeID']; ?>">
+                                    <?php echo $employee['EmployeeName']; ?>
+                                </a>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>          
+                    </aside>
+                    <section>
+                        <!-- display a table of replies from employees -->
+                        <h2><?php echo $employee_name; ?></h2>
+                        <table align="center" class="adminTable">
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Reply ID</th>
+                                <th>Email</th>
+                                <th>Reply</th>
+                                <th>Delete</th>
+                            </tr>
 
-                        <?php foreach ($replies as $reply) : ?>
-                        <tr>
-                            <td><?php echo $reply['EmployeeID']; ?></td>
-                            <td><?php echo $reply['ReplyID']; ?></td>
-                            <td><?php echo $reply['ReplyEmail']; ?></td>
-                            <td><?php echo $reply['ReplyText']; ?></td>
-                            <td><form class="button" action="delete.php" method="post">
-                                    <input type="hidden" name="reply_id"
-                                            value="<?php echo $reply['ReplyID']; ?>">
-                                     <input type="submit" value="Delete">
-                                </form>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>            
-                    </table>
-                </section>
+                            <?php foreach ($replies as $reply) : ?>
+                            <tr>
+                                <td><?php echo $reply['EmployeeID']; ?></td>
+                                <td><?php echo $reply['ReplyID']; ?></td>
+                                <td><?php echo $reply['ReplyEmail']; ?></td>
+                                <td><?php echo $reply['ReplyText']; ?></td>
+                                <td><form class="button" action="delete.php" method="post">
+                                        <input type="hidden" name="reply_id"
+                                                value="<?php echo $reply['ReplyID']; ?>">
+                                         <input type="submit" value="Delete">
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>            
+                        </table>
+                    </section>
+                </div>
             </div>
 	</main>
 	
